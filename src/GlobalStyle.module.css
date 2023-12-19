@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap");
+
+:root {
+  /* Fonts */
+  --font-familly-1: "Fira Sans", sans-serif;
+
+  --font-size-1: 1rem;
+  --font-size-2: 4.5rem;
+  --font-size-3: 2.25rem;
+  --font-size-4: 1.5rem;
+  --font-size-5: 0.875rem;
+
+  --font-weigth-1: 400;
+  --font-weigth-2: 700;
+  --font-weigth-3: 500;
+  --font-weigth-4: 600;
+  --font-weigth-5: 300;
+
+  --line-weigth-1: 4.625rem;
+  --line-weigth-2: 3.625rem;
+  --line-weigth-3: 2rem;
+  --line-weigth-4: 1.125rem;
+
+  /* Colors */
+  --color-brand-1: #ec0000;
+  --color-brand-2: #00240f;
+  --color-brand-3: #05a84b;
+
+  --color-grey-1: #000;
+  --color-grey-2: #333;
+  --color-grey-3: #4f4f4f;
+  --color-grey-4: #bdbdbd;
+
+  --mode: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: var(--font-familly-1);
+}
+
+img {
+  max-width: 170px;
+}
+
+.returnBtn {
+  background-color: var(--color-brand-1);
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+
+  i {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    color: var(--mode);
+    font-weight: bolder;
+  }
+}
+
+.returnBtn:hover {
+  background-color: var(--color-brand-2);
+}

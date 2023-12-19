@@ -1,0 +1,20 @@
+@import url("../../GlobalStyle.module.css");
+
+.recommendContainer {
+  /* background-color: blue; */
+  padding: 10px;
+  height: 50%;
+}
+
+.recommendContainer h2 {
+  font-size: 1.5625rem;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.recommendList {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}

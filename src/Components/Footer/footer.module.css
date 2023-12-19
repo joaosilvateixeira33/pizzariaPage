@@ -1,0 +1,16 @@
+@import url("../../GlobalStyle.module.css");
+
+.footerContainer {
+  background-color: var(--color-brand-2);
+  padding: 10px;
+  color: var(--mode);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}

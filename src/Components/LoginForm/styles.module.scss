@@ -1,0 +1,114 @@
+@import url("../../GlobalStyle.module.css");
+
+.loginContainer {
+  background-image: url("../../assets/fundoPizza.jpg");
+  height: 100vh;
+  background-size: 20%;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 90px;
+    padding: 10px;
+    align-items: center;
+
+    .formContainer {
+      background-color: var(--mode);
+      padding: 20px;
+      max-width: 320px;
+      max-height: 530px;
+      border-radius: 20px;
+
+      .headerLogin {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .userLogin {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+
+        i {
+          font-size: 60px;
+          color: var(--color-brand-2);
+        }
+      }
+
+      .formLogin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px;
+
+        label {
+          font-weight: bold;
+        }
+
+        .emailContainer,
+        .passwordContainer {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          i {
+            position: absolute;
+            left: 10px; // Ajuste conforme necessário
+            color: var(--color-brand-1); // Cor do ícone
+            pointer-events: none;
+          }
+
+          input {
+            font-size: 15px;
+            padding: 10px;
+            padding-left: 30px;
+            border: 1px solid var(--color-brand-2);
+            border-radius: 10px;
+          }
+        }
+
+        .btnLogin,
+        .btnRegister {
+          padding: 15px;
+          border-radius: 20px;
+          font-size: 15px;
+          background-color: var(--color-brand-1);
+          font-family: var(--font-familly-1);
+          font-weight: bold;
+          color: var(--mode);
+          width: 150px;
+          cursor: pointer;
+        }
+
+        .btnLogin:hover,
+        .btnRegister:hover {
+          background-color: var(--color-brand-2);
+        }
+
+        .registerContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          margin: 10px;
+          padding: 20px;
+          border-top: 2px solid var(--color-brand-2);
+          width: 110%;
+
+          span {
+            font-weight: bold;
+            font-family: var(--font-familly-1);
+            color: green;
+          }
+        }
+      }
+    }
+  }
+}
