@@ -15,7 +15,7 @@ export const CartItemCard = ({ pizza, cartList, setCartList }) => {
         <div className={styles.cardInfo}>
           <h3>{pizza.name}</h3>
           <span>R$ {pizza.price}</span>
-          <p>Size: {pizza.size}</p>
+          {/* <p>Size: {pizza.size}</p> */}
         </div>
         <button
           aria-label="delete"
