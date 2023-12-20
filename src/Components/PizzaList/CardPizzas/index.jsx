@@ -2,6 +2,7 @@ import styles from "../../PizzaList/pizzaStyle.module.scss";
 import { useEffect } from "react";
 
 export const CardPizza = ({ pizza, cartList, setCartList }) => {
+  // const [selectedSize, setSelectedSize] = useState("regular");
   useEffect(() => {
     // Carregar dados do localStorage na primeira renderização
     if (!localStorage.getItem("@cartList")) {
@@ -27,11 +28,11 @@ export const CardPizza = ({ pizza, cartList, setCartList }) => {
         <img src={pizza.image} alt={pizza.name} />
         <h3>{pizza.name}</h3>
         <p className={styles.description}>{pizza.description}</p>
-        <p className={styles.price}>$ {pizza.price.toFixed(2)}</p>
-        <select name="" id="" className={styles.sizePizza}>
-          <option value="regular">Regular</option>
-          <option value="big">Big</option>
-          <option value="small">Small</option>
+        <p className={styles.price}>$ {pizza.price}</p>
+        <select name="size" id="size" className={styles.sizePizza}>
+          <option value="regular">{pizza.size[1]}</option>
+          <option value="big">{pizza.size[2]}</option>
+          <option value="small">{pizza.size[0]}</option>
         </select>
         <button className={styles.btnOrder} onClick={handleCart}>
           ADD TO CART

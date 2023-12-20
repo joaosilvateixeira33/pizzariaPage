@@ -10,6 +10,7 @@ export const pizzas = [
     description:
       "Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.",
     price: 20,
+    size: ["small", "regular", "big"],
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ export const pizzas = [
     name: "Peperoni",
     description: "Pizza with homemade spicy beef sausage",
     price: 25,
+    size: ["small", "regular", "big"],
   },
   {
     id: 3,
@@ -25,5 +27,6 @@ export const pizzas = [
     description:
       "Made with San Marzano tomatoes, mozzarella cheese, and fresh basil fresh fish beef is good pizza.",
     price: 35,
+    size: ["small", "regular", "big"],
   },
 ];

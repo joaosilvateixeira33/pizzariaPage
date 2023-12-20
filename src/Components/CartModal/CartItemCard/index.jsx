@@ -14,7 +14,8 @@ export const CartItemCard = ({ pizza, cartList, setCartList }) => {
         <img src={pizza.image} alt={pizza.name} />
         <div className={styles.cardInfo}>
           <h3>{pizza.name}</h3>
-          <span>R$ {pizza.price.toFixed(2)}</span>
+          <span>R$ {pizza.price}</span>
+          <p>Size: {pizza.size}</p>
         </div>
         <button
           aria-label="delete"
