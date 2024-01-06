@@ -1,10 +1,10 @@
 import styles from "./header.module.scss";
 import logo from "../../assets/logo.svg";
-import { CartModal } from "../CartModal";
-
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../../provider/AuthContext";
 export const Header = ({ cartList, setRender, setCartList }) => {
+  const { isAuthenticated, logout } = useAuth();
+
   const openModal = (e) => {
     e.preventDefault();
     setRender(true);
@@ -29,11 +29,22 @@ export const Header = ({ cartList, setRender, setCartList }) => {
           <i className="fa-solid fa-cart-shopping" onClick={openModal}></i>
           <span>{cartList.length}</span>
         </button>
-        <div>
-          <Link to={"/login"} className={styles.signIn}>
-            Sign-In
-          </Link>
-        </div>
+        
+        {isAuthenticated ? (
+          // If authenticated, show logout button
+          <div>
+            <button onClick={logout} className={styles.signIn}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          // If not authenticated, show the Sign-In link
+          <div>
+            <Link to="/login" className={styles.signIn}>
+              Sign-In
+            </Link>
+          </div>
+        )}
       </div>
     </header>
   );
