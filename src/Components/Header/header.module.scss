@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    margin-top: 12px;
   }
 
   .menu li {
@@ -74,5 +75,15 @@
   .signIn:hover {
     background-color: var(--color-brand-1);
     cursor: pointer;
+  }
+
+  .containerLogout{
+    display:flex;
+    align-items: center;
+
+    .dashboard{
+      text-decoration: none;
+      color: black;
+    }
   }
 }

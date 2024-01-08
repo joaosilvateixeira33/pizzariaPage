@@ -5,6 +5,7 @@ import { Input } from "../Input/index";
 import { Link, useNavigate} from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import styles from "./styles.module.scss";
+import { users } from "../../data/users";
 
 export const LoginForm = () => {
   const { login } = useAuth();
@@ -18,7 +19,7 @@ export const LoginForm = () => {
 
     // Substitua esta chamada por sua lógica de autenticação real
     const isAuthenticated = await authenticateUser(email, password);
-
+      
     if (isAuthenticated) {
       login(email);
       navigate('/')
@@ -29,9 +30,10 @@ export const LoginForm = () => {
   };
 
   const authenticateUser = async (email, password) => {
-    // Lógica de autenticação simulada
-    // Substitua isso com sua lógica real de autenticação
-    return email === 'admintest@teste.com' && password === 'admin';
+    const user = users.find(usuario => usuario.email === email);
+    if(user && user.password === password){
+      return true;
+    }
   };
 
   return (
@@ -79,7 +81,7 @@ export const LoginForm = () => {
               Sign-up
             </button>
             <div className={styles.registerContainer}>
-              <span>Don't have an account yet? create</span>
+              <span className={styles.message}>Don't have an account yet? create</span>
               <Link to={"/register"}>
                 <button className={styles.btnRegister}>Register</button>
               </Link>

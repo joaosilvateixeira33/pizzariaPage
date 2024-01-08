@@ -19,7 +19,7 @@
       background-color: var(--mode);
       padding: 20px;
       max-width: 320px;
-      max-height: 530px;
+      max-height: 96vh;
       border-radius: 20px;
 
       .headerLogin {
@@ -99,12 +99,14 @@
           margin: 10px;
           padding: 20px;
           border-top: 2px dashed var(--color-brand-2);
-          width: 23vw;
+          width: 30vw;
 
-          span {
+          .message {
             font-weight: bold;
             font-family: var(--font-familly-1);
             color: green;
+            width: 300px;
+            text-align: center;
           }
         }
       }

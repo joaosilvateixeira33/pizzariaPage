@@ -8,20 +8,20 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setAuthenticated] = useState(false);
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('')
 
-  const login = (user) => {
+  const login = (email) => {
     setAuthenticated(true);
-    setUsername(user);
+    setEmail(email);
   };
 
   const logout = () => {
     setAuthenticated(false);
-    setUsername('');
+    setEmail('');
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, username, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, email, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

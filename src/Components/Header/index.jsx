@@ -1,14 +1,17 @@
 import styles from "./header.module.scss";
 import logo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useAuth } from "../../provider/AuthContext";
-export const Header = ({ cartList, setRender, setCartList }) => {
-  const { isAuthenticated, logout } = useAuth();
+import { users } from "../../data/users";
 
+export const Header = ({ cartList, setRender, setCartList }) => {
+  const { isAuthenticated, logout, email} = useAuth();
   const openModal = (e) => {
     e.preventDefault();
     setRender(true);
   };
+
+  const currentUser = users.find(user => user.email === email);
 
   return (
     <header className={styles.headerContainer}>
@@ -32,7 +35,10 @@ export const Header = ({ cartList, setRender, setCartList }) => {
         
         {isAuthenticated ? (
           // If authenticated, show logout button
-          <div>
+          <div className={styles.containerLogout}>
+            <Link to="/dashboard" className={styles.dashboard}>
+              <h4>Hello, {currentUser?.name}</h4>
+            </Link>
             <button onClick={logout} className={styles.signIn}>
               Logout
             </button>
