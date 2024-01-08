@@ -6,26 +6,35 @@ import { Link, useNavigate} from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import styles from "./styles.module.scss";
 import { users } from "../../data/users";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const LoginForm = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Substitua esta chamada por sua lógica de autenticação real
     const isAuthenticated = await authenticateUser(email, password);
       
     if (isAuthenticated) {
       login(email);
       navigate('/')
-      
+
     } else {
-      alert('Credenciais inválidas');
+      toast.error('Invalid credentials', {
+        position: 'top-right',
+        autoClose: 3000, // Fechar automaticamente após 3000 milissegundos (3 segundos)
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
