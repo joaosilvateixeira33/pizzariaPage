@@ -31,6 +31,7 @@
   .buttonsContainer {
     display: flex;
     gap: 20px;
+    align-items: center;
   }
 
   .buttonsContainer i {
@@ -79,7 +80,7 @@
 
   .containerLogout{
     display:flex;
-    align-items: center;
+    align-items: baseline;
 
     .dashboard{
       text-decoration: none;

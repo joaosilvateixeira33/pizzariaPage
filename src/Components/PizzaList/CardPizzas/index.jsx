@@ -1,5 +1,7 @@
 import styles from "../../PizzaList/pizzaStyle.module.scss";
 import { useEffect } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CardPizza = ({ pizza, cartList, setCartList }) => {
   // const [selectedSize, setSelectedSize] = useState("regular");
@@ -14,12 +16,17 @@ export const CardPizza = ({ pizza, cartList, setCartList }) => {
   }, [setCartList]);
 
   const handleCart = () => {
-    // Adicionar a pizza ao carrinho se não estiver presente
     const updatedCart = [...cartList, pizza];
     setCartList(updatedCart);
-
-    // Atualizar o localStorage com o novo carrinho
     localStorage.setItem("@cartList", JSON.stringify(updatedCart));
+    toast.success('Pizza added to cart!', {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
   };
 
   return (

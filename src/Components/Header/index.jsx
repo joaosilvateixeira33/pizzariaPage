@@ -37,7 +37,7 @@ export const Header = ({ cartList, setRender, setCartList }) => {
           // If authenticated, show logout button
           <div className={styles.containerLogout}>
             <Link to="/dashboard" className={styles.dashboard}>
-              <h4>Hello, {currentUser?.name}</h4>
+              <h6>Hello, {currentUser?.name}</h6>
             </Link>
             <button onClick={logout} className={styles.signIn}>
               Logout

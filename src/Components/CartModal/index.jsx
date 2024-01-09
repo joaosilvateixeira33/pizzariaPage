@@ -2,6 +2,7 @@ import React from "react";
 import { CartItemCard } from "./CartItemCard/index";
 import styles from "./cart.module.scss";
 
+
 export const CartModal = ({ cartList, setCartList, render, setRender }) => {
   const total = cartList.reduce((prevValue, pizza) => {
     return prevValue + pizza.price;

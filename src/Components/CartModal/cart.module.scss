@@ -27,7 +27,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 97%;
+      width: 100%;
       background-color: var(--color-brand-1);
       height: 57px;
       padding-left: 10px;
@@ -46,7 +46,6 @@
     }
 
     ul {
-      width: 484px;
       display: flex;
       flex-direction: column;
       gap: 20px;
